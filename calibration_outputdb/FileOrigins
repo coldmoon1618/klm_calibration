@@ -1,0 +1,10 @@
+bucket17
+& Pro12_chunk1
+$gfal-copy srm://dcblsrm.sdcc.bnl.gov:8443/srm/managerv2?SFN=/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/67/calibration_results.tar.gz .
+
+s-proc1  [gbasf2 environment] $gfal-copy srm://dcblsrm.sdcc.bnl.gov:8443/srm/managerv2?SFN=/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/6/calibration_results.tar.gz .
+Bucket15 /group/belle2/dataprod/dp_managers/ddossett/airflow/jobs/185/execution/calibration_results/KLMChannelStatus/outputdb
+Bucket14 /group/belle2/dataprod/dp_managers/ddossett/airflow/jobs/160/execution/calibration_results/KLMChannelStatus/outputdb
+Bucket13 /group/belle2/dataprod/dp_managers/ddossett/airflow/jobs/130/execution/calibration_results/KLMChannelStatus/outputdb
+Bucket12
+
