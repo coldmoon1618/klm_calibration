@@ -14,7 +14,12 @@ rev = []
 ini = []
 fin = []
 
-caliDir = '/home/belle2/zhai/calibration_outputdb/s-proc2/'
+if len(sys.argv) != 2:
+    print('Usage: basf2 generateValidationRoot.py dirName')
+    print('')
+    sys.exit(1)
+dirName = str(sys.argv[1])
+caliDir = '/home/belle2/zhai/extraSpace/klm_calibration/calibration_outputdb/'+sys.argv[1]+'/'
 
 iovfile = open(caliDir+'database.txt','r')
 for line in iovfile:
@@ -91,6 +96,6 @@ for x in range(0,len(rev)):
         rev_num[0]=rev[x]
         tree.Fill()
     '''
-outfile = ROOT.TFile('s-proc2_validation.root', 'recreate')
+outfile = ROOT.TFile(dirName+'_validation.root', 'recreate')
 tree.Write()
 outfile.Close()
