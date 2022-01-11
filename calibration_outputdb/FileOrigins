@@ -1,3 +1,13 @@
+bucket29
+https://agira.desy.de/browse/BIIDP-5126
+gfal-copy srm://dcblsrm.sdcc.bnl.gov:8443/srm/managerv2?SFN=/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/518/calibration_results.tar.gz .
+OR download via BNLBox at: https://dcbldoor.sdcc.bnl.gov/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/518
+
+bucket28
+https://agira.desy.de/browse/BIIDP-5066
+gfal-copy srm://dcblsrm.sdcc.bnl.gov:8443/srm/managerv2?SFN=/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/494/calibration_results.tar.gz .
+OR download via BNLBox at: https://dcbldoor.sdcc.bnl.gov/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/494
+
 bucket27
 https://agira.desy.de/browse/BIIDP-4966
 gfal-copy srm://dcblsrm.sdcc.bnl.gov:8443/srm/managerv2?SFN=/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/470/calibration_results.tar.gz .

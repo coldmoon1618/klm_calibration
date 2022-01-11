@@ -40,7 +40,7 @@ void MakePlots(TString caliName) {
     ////////////////////////////////////////////////
 
     ////////////////////////////////////////// entries ////////////////////////////////////////////////
-    Int_t   rev_num;
+    Short_t   rev_num;
     tree -> SetBranchAddress("rev_num", &rev_num);
     Int_t   run_num;
     tree -> SetBranchAddress("run_num", &run_num);
