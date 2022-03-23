@@ -1,3 +1,12 @@
+bucket30
+https://agira.desy.de/browse/BIIDP-5322
+gfal-copy srm://dcblsrm.sdcc.bnl.gov:8443/srm/managerv2?SFN=/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/594/calibration_results.tar.gz .
+OR download via BNLBox at: https://dcbldoor.sdcc.bnl.gov/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/594
+
+proc13_chunk1
+https://agira.desy.de/browse/BIIDP-5184
+gfal-copy srm://dcache-se-desy.desy.de:8443/srm/managerv2?SFN=/pnfs/desy.de/belle/belle2/CAL/belle/logs/b2-cal1/540/calibration_results.tar.gz .
+
 bucket29
 https://agira.desy.de/browse/BIIDP-5126
 gfal-copy srm://dcblsrm.sdcc.bnl.gov:8443/srm/managerv2?SFN=/pnfs/sdcc.bnl.gov/belleiicalib/b2-cal1/logs/518/calibration_results.tar.gz .
@@ -32,4 +41,3 @@ Bucket15 /group/belle2/dataprod/dp_managers/ddossett/airflow/jobs/185/execution/
 Bucket14 /group/belle2/dataprod/dp_managers/ddossett/airflow/jobs/160/execution/calibration_results/KLMChannelStatus/outputdb
 Bucket13 /group/belle2/dataprod/dp_managers/ddossett/airflow/jobs/130/execution/calibration_results/KLMChannelStatus/outputdb
 Bucket12
-
