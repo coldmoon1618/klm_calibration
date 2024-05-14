@@ -28,13 +28,13 @@ void setAndDraw(TGraph *gr, const char *title, int color, int style, double max,
     }
 }
 
-void MakePlots(TString caliName) {
+void MakePlots(TString fname) {
     bool makeLog = 0;
 
     ////////////////////////////////////////////////
     TChain *tree = new TChain("tree");            //
                                                   //
-    tree -> AddFile(caliName+"_validation.root"); //
+    tree -> AddFile(fname);                       //
                                                   //
     Int_t allEntries = tree -> GetEntries();      //
     ////////////////////////////////////////////////
@@ -87,7 +87,7 @@ void MakePlots(TString caliName) {
     TGraph *gr_bklm_hot = new TGraph(allEntries,run_num_arry,bklm_hot_arry);
     setAndDraw(gr_bklm_hot,"BKLM hot channels",kBlue+2,24,8,makeLog);
 
-    c_klm -> SaveAs(caliName+"_plots.pdf");
+    c_klm -> SaveAs("plots.pdf");
    
     return ;
 }

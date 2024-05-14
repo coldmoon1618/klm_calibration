@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import math
+# import math
 import numpy
 import ROOT
-from ROOT.Belle2 import KLMChannelStatus
+# from ROOT.Belle2 import KLMChannelStatus
 
 import os.path
 from os import path
@@ -19,7 +19,7 @@ if len(sys.argv) != 2:
     print('')
     sys.exit(1)
 dirName = str(sys.argv[1])
-caliDir = '/home/belle2/zhai/extraSpace/klm_calibration/calibration_outputdb/'+sys.argv[1]+'/'
+caliDir = dirName
 
 iovfile = open(caliDir+'database.txt','r')
 for line in iovfile:
@@ -96,6 +96,6 @@ for x in range(0,len(rev)):
         rev_num[0]=rev[x]
         tree.Fill()
     '''
-outfile = ROOT.TFile(dirName+'_validation.root', 'recreate')
+outfile = ROOT.TFile('validation.root', 'recreate')
 tree.Write()
 outfile.Close()
