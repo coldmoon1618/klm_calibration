@@ -1,4 +1,7 @@
 # klm_calibration
+
+runs on basf2 release-08-01-03
+
 calibration_outputdb/
     Output from Airflow
 Scripts/
@@ -9,6 +12,16 @@ Scripts/
 
     Note: leave all the plots here and remove the local Mac version of repo
 
-runs on basf2 release-05-02-19
+# usage
 
-Dec 3, 2021
+ - run on calibration output and create the `validation.root` file
+
+```
+basf2 scripts/generateValidationRoot.py dirName/
+```
+
+ - create plots
+
+```
+root scripts/MakePlots.C\(\"validation.root\"\)
+```
