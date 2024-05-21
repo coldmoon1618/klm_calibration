@@ -1,6 +1,6 @@
 # klm_calibration
 
-runs on `basf2` `release-08-01-03`
+runs on `basf2 release-08-01-03`, `ROOT 6.24/06`
 
  - [calibration_outputdb](calibration_outputdb)
     - Output from Airflow
@@ -14,6 +14,12 @@ runs on `basf2` `release-08-01-03`
 
 ```
 basf2 scripts/generateValidationRoot.py dirName/
+```
+
+or even using PyROOT
+
+```
+python scripts/generateValidationRoot.py calibration_outputdb/bucket37/
 ```
 
  - create plots
