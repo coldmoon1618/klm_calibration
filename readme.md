@@ -2,8 +2,8 @@
 
 runs on `basf2 release-08-01-07`
 
- - [calibration_outputdb](calibration_outputdb)
-    - Output from Airflow
+ - [calibration_outputdbs](calibration_outputdbs)
+    - Output from Airflow for calibration campaigns
  - `generateValidationRoot.py`: Read in outputdb and writes `validation.root`
  - `MakePlots.C`: Use validation.root to make plots
 
