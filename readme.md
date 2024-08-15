@@ -8,7 +8,11 @@ runs on `basf2 release-08-01-07`
  - `MakePlots.C`: Use validation.root to make plots
 
 # usage
-
+ 
+ - download calibration output using [`b2conditionsdb legacydownload`](https://software.belle2.org/development/sphinx/framework/doc/tools/06-b2conditionsdb.html#legacydownload)
+```
+b2conditionsdb legacydownload <globaltag> -f KLMChannelStatus --run-range expLow runLow expHigh runHigh -c
+```
  - run on calibration output and create the `validation.root` file
 
 ```
