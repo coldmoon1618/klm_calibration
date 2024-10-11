@@ -1,6 +1,6 @@
 # klm_calibration
 
-runs on `basf2 release-08-01-07`
+runs on `basf2 release-08-02-00`
 
  - [calibration_outputdbs](calibration_outputdbs)
     - Output from Airflow for calibration campaigns
@@ -13,14 +13,8 @@ runs on `basf2 release-08-01-07`
 ```
 b2conditionsdb legacydownload <globaltag> -f KLMChannelStatus --run-range expLow runLow expHigh runHigh -c
 ```
- - run on calibration output and create the `validation.root` file
+ - run on calibration output and create the `validation.root` and `plots.pdf`
 
 ```
 basf2 generateValidationRoot.py dirName/
-```
-
- - create plots
-
-```
-python3 MakePlots.py validation.root
 ```
