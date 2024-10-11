@@ -22,5 +22,5 @@ basf2 generateValidationRoot.py dirName/
  - create plots
 
 ```
-root 'MakePlots.C("validation.root")'
+python3 MakePlots.py validation.root
 ```
