@@ -37,7 +37,7 @@ def parse_args():
 
 
 def plot(rev_num_arry, eklm_dead_arry, eklm_hot_arry, bklm_dead_arry, bklm_hot_arry,
-         fname='plots.pdf', drawLims=False):
+         fname='plots.pdf', drawLims=True):
     fig, axs = plt.subplots(2, 2, sharex=True)
     axs = axs.ravel()
 
