@@ -41,21 +41,21 @@ def plot(rev_num_arry, eklm_dead_arry, eklm_hot_arry, bklm_dead_arry, bklm_hot_a
     fig, axs = plt.subplots(2, 2, sharex=True)
     axs = axs.ravel()
 
-    axs[0].plot(rev_num_arry, eklm_dead_arry, '.', color='C0')
+    axs[0].plot(run_num_arry, eklm_dead_arry, '.', color='C0')
     axs[0].set_ylabel("EKLM dead channels")
-    axs[0].set_xlabel("Rev. numbers")
+    axs[0].set_xlabel("Run numbers")
 
-    axs[1].plot(rev_num_arry, eklm_hot_arry, '.', color='C1')
+    axs[1].plot(run_num_arry, eklm_hot_arry, '.', color='C1')
     axs[1].set_ylabel("EKLM hot channels")
-    axs[1].set_xlabel("Rev. numbers")
+    axs[1].set_xlabel("Run numbers")
 
-    axs[2].plot(rev_num_arry, bklm_dead_arry, '.', color='C0')
+    axs[2].plot(run_num_arry, bklm_dead_arry, '.', color='C0')
     axs[2].set_ylabel("BKLM dead channels")
-    axs[2].set_xlabel("Rev. numbers")
+    axs[2].set_xlabel("Run numbers")
 
-    axs[3].plot(rev_num_arry, bklm_hot_arry, '.', color='C1')
+    axs[3].plot(run_num_arry, bklm_hot_arry, '.', color='C1')
     axs[3].set_ylabel("BKLM hot channels")
-    axs[3].set_xlabel("Rev. numbers")
+    axs[3].set_xlabel("Run numbers")
 
     if drawLims:
         axs[0].axhline(300, ls='--', color='r')
@@ -89,16 +89,13 @@ if __name__ == '__main__':
     iovfile = open(database_file, 'r')
     for line in iovfile:
         lst = line.split()
-        if lst[1].isdigit():
-            rev.append(int(lst[1]))
-        else:
-            rev.append(-1)
+        rev.append(lst[1])
         iov = lst[2].split(',')
         ini.append(int(iov[1]))
         fin.append(int(iov[3]))
     iovfile.close()
 
-    rev_num = numpy.zeros(1, dtype=int)
+    rev_num = numpy.zeros(1, dtype=str)
     run_num = numpy.zeros(1, dtype=int)
 
     eklm_normal = numpy.zeros(1, dtype=int)
@@ -110,7 +107,7 @@ if __name__ == '__main__':
     bklm_hot = numpy.zeros(1, dtype=int)
 
     tree = ROOT.TTree('tree', '')
-    tree.Branch('rev_num', rev_num, 'rev_num/I')
+    tree.Branch('rev_num', rev_num, 'rev_num/S')
     tree.Branch('run_num', run_num, 'run_num/I')
     tree.Branch('eklm_normal', eklm_normal, 'eklm_normal/I')
     tree.Branch('eklm_dead', eklm_dead, 'eklm_dead/I')
@@ -120,7 +117,7 @@ if __name__ == '__main__':
     tree.Branch('bklm_hot', bklm_hot, 'bklm_hot/I')
 
     # store all entries for plot
-    rev_num_arry = []
+    run_num_arry = []
     eklm_dead_arry = []
     eklm_hot_arry = []
     bklm_dead_arry = []
@@ -168,7 +165,7 @@ if __name__ == '__main__':
             rev_num[0]=rev[x]
             tree.Fill()
         '''
-        rev_num_arry.append(rev_num[0])
+        run_num_arry.append(run_num[0])
         eklm_dead_arry.append(eklm_dead[0])
         eklm_hot_arry.append(eklm_hot[0])
         bklm_dead_arry.append(bklm_dead[0])
@@ -178,4 +175,4 @@ if __name__ == '__main__':
     tree.Write()
     outfile.Close()
 
-    plot(rev_num_arry, eklm_dead_arry, eklm_hot_arry, bklm_dead_arry, bklm_hot_arry)
+    plot(run_num_arry, eklm_dead_arry, eklm_hot_arry, bklm_dead_arry, bklm_hot_arry)
