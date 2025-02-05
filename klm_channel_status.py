@@ -17,6 +17,7 @@ import ROOT
 from prompt import ValidationSettings
 import argparse
 import matplotlib.pyplot as plt
+from basf2 import B2INFO
 
 #: Tells the automated system some details of this script
 settings = ValidationSettings(name='KLM channel status',
@@ -170,6 +171,8 @@ if __name__ == '__main__':
         eklm_hot_arry.append(eklm_hot[0])
         bklm_dead_arry.append(bklm_dead[0])
         bklm_hot_arry.append(bklm_hot[0])
+
+    B2INFO(f'run number range: [{min(run_num_arry)},{max(run_num_arry)}]')
 
     outfile = ROOT.TFile('validation.root', 'recreate')
     tree.Write()
