@@ -19,5 +19,5 @@ b2conditionsdb legacydownload <globaltag> -f KLMChannelStatus --run-range expLow
  - run on calibration output and create the `validation.root` and `plots.pdf`
 
 ```
-basf2 generateValidationRoot.py dirName/
+basf2 klm_channel_status.py <job_path> <input_data_path> <requested_iov> <expert_config>
 ```
