@@ -43,12 +43,12 @@ def plot(run_num_arry, eklm_dead_arry, eklm_hot_arry, bklm_dead_arry, bklm_hot_a
     axs = axs.ravel()
 
     axs[0].plot(run_num_arry, eklm_dead_arry, '.', color='C0')
+    axs[0].tick_params(labelbottom=True)
     axs[0].set_ylabel("EKLM dead channels")
-    axs[0].set_xlabel("Run numbers")
 
     axs[1].plot(run_num_arry, eklm_hot_arry, '.', color='C1')
+    axs[1].tick_params(labelbottom=True)
     axs[1].set_ylabel("EKLM hot channels")
-    axs[1].set_xlabel("Run numbers")
 
     axs[2].plot(run_num_arry, bklm_dead_arry, '.', color='C0')
     axs[2].set_ylabel("BKLM dead channels")
